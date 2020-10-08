@@ -11,7 +11,9 @@ else
  `mkdir ~/ros/data/$day`
 fi
 
+CURDIR=$pwd
 FILENAME=$1
+
 if [[ "$FILENAME" == "" ]]; then
   echo "syntax error. try ./collect_data.sh nameOFfile"
   exit
@@ -27,3 +29,5 @@ echo "collecting Local Position data"
 rostopic echo /mavros/local_position/pose >> $FILENAME-local.yaml &
 echo "collecting Global Position data"
 rostopic echo /mavros/global_position/global >> $FILENAME-global.yaml && fg
+
+cd $CURDIR
