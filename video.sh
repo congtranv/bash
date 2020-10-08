@@ -6,4 +6,4 @@ if [[ "$FILENAME" == "" ]]; then
   exit
 fi
 
-ffmpeg -an -f video4linux2 -s 960x720 -r 10 -i /dev/video0 -vcodec mpeg4 -vtag DIVX /home/ivsr/Videos/$FILENAME.avi
+ffmpeg -an -f video4linux2 -s 960x720 -r 10 -i /dev/video0 -vcodec mpeg4 -vtag DIVX ~/Videos/$FILENAME.avi
