@@ -3,7 +3,7 @@ source ~/.bashrc
 clear
 #today=`date +%Y-%m-%d.%H-%M-%S`
 day=`date +%Y%m%d`
-if [ -d "/home/ivsr-nano/ros/data/$day" ]
+if [ -d "~/ros/data/$day" ]
 then 
  echo "~/ros/data/$day exists"
 else
