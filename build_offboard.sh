@@ -1,6 +1,15 @@
 #!/bin/bash
 clear
-cd ~/ros/catkin_ws #need changing to your path if has deference
+CURDIR=$pwd
+
+if [ -z "$1" ]; then
+  echo "syntax error:"
+  echo "./build_offboard.sh /path/to/catkin/ws"
+  exit
+else
+  WS=$1
+fi
+cd $WS
 catkin build offboard
 wait
-cd ~/ros/bash #need changing to your path if has deference
+cd $CURDIR
