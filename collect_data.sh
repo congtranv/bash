@@ -3,12 +3,12 @@ source ~/.bashrc
 clear
 #today=`date +%Y-%m-%d.%H-%M-%S`
 day=`date +%Y%m%d`
-if [ -d "~/ros/data/$day" ]
+if [ -d "~/ros/data/$day" ] # need changing to your directory
 then 
- echo "~/ros/data/$day exists"
+ echo "~/ros/data/$day exists" # need changing to your directory
 else
- echo "mkdir ~/ros/data/$day"
- `mkdir ~/ros/data/$day`
+ echo "mkdir ~/ros/data/$day" # need changing to your directory
+ `mkdir ~/ros/data/$day` # need changing to your directory
 fi
 
 CURDIR=$pwd
@@ -19,7 +19,7 @@ if [[ "$FILENAME" == "" ]]; then
   exit
 fi
 
-cd ~/ros/data/$day
+cd ~/ros/data/$day # need changing to your directory
 rosbag record -aO $FILENAME.bag &
 echo "collecting IMU data"
 rostopic echo /mavros/imu/data >> $FILENAME-imu.yaml &
