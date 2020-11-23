@@ -90,15 +90,21 @@
 ```
 ./setmode.sh
 ```
-## /ssh-nano.sh
+## ssh-nano.sh
 - connect to companion PC (jetson nano) from laptop via ssh
 - syntax:
 ```
 ./ssh-nano.sh [nano IP]
 ```
-## ./video.sh
+## video.sh
 - record video from Logitech C270 camera
 - syntax:
 ```
 ./video.sh [nameOFvideo]
+```
+## distanceGPS
+- calculate the distance between GPS 1 point (lat1, lon1, alt1) and GPS 2 point (lat2, lon2, alt2)
+- syntax:
+```
+./distanceGPS
 ```
