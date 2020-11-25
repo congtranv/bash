@@ -13,4 +13,4 @@ else
   echo "gcs_url set to: $1"
 fi
 
-roslaunch mavros px4.launch gcs_url:=$gcs_url
+roslaunch mavros px4.launch fcu_url:=/dev/ttyTHS1:921600 gcs_url:=$gcs_url
