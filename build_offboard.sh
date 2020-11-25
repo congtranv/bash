@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-CURDIR=$pwd
+#CURDIR=$pwd
 
 if [ -z "$1" ]; then
   echo "syntax error:"
@@ -9,7 +9,7 @@ if [ -z "$1" ]; then
 else
   WS=$1
 fi
-cd $WS
-catkin build offboard
+#cd $WS
+catkin build -w $WS
 wait
-cd $CURDIR
+#cd $CURDIR
