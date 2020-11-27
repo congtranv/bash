@@ -20,7 +20,7 @@ if [[ "$FILENAME" == "" ]]; then
 fi
 
 cd ~/ros/data/$day # need changing to your directory
-rosbag record -aO $FILENAME.bag &
+#rosbag record -aO $FILENAME.bag &
 echo "collecting IMU data"
 rostopic echo /mavros/imu/data >> $FILENAME-imu.yaml &
 echo "collecting IMU raw data"
@@ -28,6 +28,8 @@ rostopic echo /mavros/imu/data_raw >> $FILENAME-imu-raw.yaml &
 echo "collecting Local Position data"
 rostopic echo /mavros/local_position/pose >> $FILENAME-local.yaml &
 echo "collecting Global Position data"
-rostopic echo /mavros/global_position/global >> $FILENAME-global.yaml && fg
+rostopic echo /mavros/global_position/global >> $FILENAME-global.yaml &
+echo "record rosbag"
+rosbag record -aO $FILENAME.bag && fg
 
 cd $CURDIR
